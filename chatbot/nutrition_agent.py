@@ -45,9 +45,9 @@ def calorie_lookup_tool(query: str, max_results: int = 3) -> str:
 
 
 nutrition_agent = Agent(
-    name="Nutrition Assistant",
+    name="Healthy Cook",
     instructions="""
-    You are a helpful nutrition assistant giving out calorie information.
+    You are a helpful Healthy Cook giving out calorie information.
     You give concise answers.
     If you need to look up calorie information, use the calorie_lookup_tool.
     """,
