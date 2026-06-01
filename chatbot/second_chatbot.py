@@ -1,5 +1,6 @@
 import chainlit as cl
 import dotenv
+import os
 
 dotenv.load_dotenv()
 
@@ -53,3 +54,17 @@ async def on_message(message: cl.Message):
                 )
 
     await msg.update()
+
+
+@cl.password_auth_callback
+def auth_callback(username: str, password: str):
+    if (username, password) == (
+        os.getenv("CHAINLIT_USERNAME"),
+        os.getenv("CHAINLIT_PASSWORD"),
+    ):
+        return cl.User(
+            identifier="Student",
+            metadata={"role": "student", "provider": "credentials"},
+        )
+    else:
+        return None
