@@ -25,12 +25,10 @@ code .env
 One-time setup
 ```
 cd chatbot && chainlit run 4_authentication.py --port 10000 --host 0.0.0.0
+cd chatbot && chainlit run second_chatbot.py --port 10000 --host 0.0.0.0
 ```
 
-The URL for our demo logo: 
-```
-https://upload.wikimedia.org/wikipedia/commons/e/e3/Udemy_logo.svg
-```
+
 
 ### Adding Authentication
 1) Generate a Chainlit Secret: `chainlit create-secret`
